@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://tfcvxu1gtw0p"]
+[gd_scene load_steps=8 format=3 uid="uid://tfcvxu1gtw0p"]
 
 [ext_resource type="Texture2D" uid="uid://fagsknu64wht" path="res://assets/plane/planes_sheet.png" id="1_4cuoc"]
+[ext_resource type="Script" path="res://scenes/plane/plane.gd" id="1_kwlrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h65vs"]
 atlas = ExtResource("1_4cuoc")
@@ -35,13 +36,14 @@ animations = [{
 radius = 30.5941
 
 [node name="Plane" type="CharacterBody2D"]
+script = ExtResource("1_kwlrk")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_2460c")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.379493
+frame_progress = 0.479884
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1frch")

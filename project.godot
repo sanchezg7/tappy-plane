@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "Mobile")
 
 window/size/viewport_width=480
 window/size/viewport_height=854
+window/size/initial_position_type=2
 window/handheld/orientation=1
 
 [rendering]
