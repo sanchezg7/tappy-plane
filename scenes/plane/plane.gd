@@ -11,8 +11,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# recall, this is inherited from NODE type
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	move_and_slide()
 	if is_on_floor() == true:
-		sprite.stop()
+		handleDie()
+
+func handleDie() -> void:
+	sprite.stop()
+	# hint to stop the physics calc
+	set_physics_process(false) 
