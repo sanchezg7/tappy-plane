@@ -5,6 +5,7 @@
 [node name="Plane" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_4cuoc")
 region_enabled = true
-region_rect = Rect2(0, 0, 89, 78)
+region_rect = Rect2(0, 0, 88, 78)
