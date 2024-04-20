@@ -13,6 +13,10 @@ config_version=5
 config/name="Tappy"
 config/features=PackedStringArray("4.2", "Mobile")
 
+[autoload]
+
+Game="*res://global/game.gd"
+
 [display]
 
 window/size/viewport_width=480

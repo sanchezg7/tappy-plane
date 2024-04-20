@@ -1,7 +1,6 @@
 extends Node2D
 
 const SCROLL_SPEED: float = 160.0
-const GROUP_PLAYER: String = "player"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,10 +17,10 @@ func _on_screen_exited():
 
 
 func _on_pipe_body_entered(body):
-	if body.is_in_group(GROUP_PLAYER) == true:
+	if body.is_in_group(Game.GROUP_PLAYER) == true:
 		print("On pipe body entered ", body)
 
 
 func _on_laser_body_exited(body):
-	if body.is_in_group(GROUP_PLAYER) == true:
+	if body.is_in_group(Game.GROUP_PLAYER) == true:
 		print("On laser body exited ", body)
