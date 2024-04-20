@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal on_plane_died
 
 const GRAVITY: float = 888.0
 const POWER: float = -400.0
@@ -22,6 +23,7 @@ func _physics_process(delta):
 		handleDie()
 
 func handleDie() -> void:
+	on_plane_died.emit()
 	sprite.stop()
 	# hint to stop the physics calc
 	set_physics_process(false) 
