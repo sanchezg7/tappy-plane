@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://2spt1fr0dnrd"]
+[gd_scene load_steps=7 format=3 uid="uid://2spt1fr0dnrd"]
 
 [ext_resource type="FontFile" uid="uid://bhsttrpo4850o" path="res://assets/fonts/Skranji-Bold.ttf" id="1_6ixcq"]
 [ext_resource type="LabelSettings" uid="uid://dktrcdgwc3cay" path="res://ui/styles/sh_redder_72.tres" id="1_7grwy"]
+[ext_resource type="Texture2D" uid="uid://badyh6ydnrnnc" path="res://assets/background/sky.png" id="1_j42do"]
 [ext_resource type="LabelSettings" uid="uid://mbq6mkeq1fx1" path="res://ui/styles/sh_red_48.tres" id="1_nijtc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vbqow"]
@@ -22,6 +23,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_j42do")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
