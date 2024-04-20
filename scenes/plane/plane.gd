@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const GRAVITY: float = 888.0
+const GRAVITY: float = 1000.0
 const POWER: float = -400.0
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
