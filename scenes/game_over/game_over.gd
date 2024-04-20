@@ -4,6 +4,7 @@ extends Control
 @onready var timer = $Timer
 
 @onready var isGameOver: bool = false
+@onready var game_over_sound = $GameOverSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,7 @@ func _process(delta):
 	pass
 
 func _handleGameOver():
+	game_over_sound.play()
 	isGameOver = true
 	show()
 	timer.start()
