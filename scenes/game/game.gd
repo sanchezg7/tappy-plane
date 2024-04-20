@@ -4,9 +4,13 @@ extends Node2D
 @export var pipes_scene: PackedScene
 
 @onready var pipes_holder = $PipesHolder
+@onready var spawn_upper = $SpawnUpper
+@onready var spawn_lower = $SpawnLower
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# force a new seed for randf
+	randomize()
 	spawn_pipes()	
 	pass # Replace with function body.
 
@@ -19,7 +23,8 @@ func _process(delta):
 func spawn_pipes() -> void:
 	# it's been created at this point. Default position of 0,0. Move it to be off screen
 	var new_pipes = pipes_scene.instantiate()
-	new_pipes.position = Vector2(550, 450)
+	var y_pos = randf_range(spawn_upper.position.y, spawn_lower.position.y)
+	new_pipes.position = Vector2(spawn_upper.position.x, y_pos)
 	# add to this node
 	pipes_holder.add_child(new_pipes)
 
