@@ -18,11 +18,11 @@ func _on_screen_exited():
 
 func _on_pipe_body_entered(body):
 	if body.is_in_group(Game.GROUP_PLAYER) == true:
-		var plane = body;
+		var plane = body
 		plane.handleDie()
 
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(Game.GROUP_PLAYER) == true:
-		var plane = body;
-		plane.handleDie()
+		var plane = body
+		Score.increment_current_score()

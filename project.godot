@@ -16,12 +16,12 @@ config/features=PackedStringArray("4.2", "Mobile")
 [autoload]
 
 Game="*res://global/game.gd"
+Score="*res://global/score.gd"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=854
-window/size/initial_position_type=2
 window/handheld/orientation=1
 
 [input]

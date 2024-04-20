@@ -12,14 +12,12 @@ extends Node2D
 func _ready():
 	# force a new seed for randf
 	randomize()
-	spawn_pipes()	
-	pass # Replace with function body.
-
+	Score.set_current_score(0)
+	spawn_pipes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func spawn_pipes() -> void:
 	# it's been created at this point. Default position of 0,0. Move it to be off screen
