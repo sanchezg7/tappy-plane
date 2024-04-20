@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://2spt1fr0dnrd"]
 
-[ext_resource type="FontFile" uid="uid://bhsttrpo4850o" path="res://assets/fonts/Skranji-Bold.ttf" id="1_6ixcq"]
-[ext_resource type="LabelSettings" uid="uid://dktrcdgwc3cay" path="res://ui/styles/sh_redder_72.tres" id="1_7grwy"]
-[ext_resource type="Script" path="res://ui/main/main.gd" id="1_24apk"]
-[ext_resource type="Texture2D" uid="uid://badyh6ydnrnnc" path="res://assets/background/sky.png" id="1_j42do"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_5o4de"]
+[ext_resource type="Texture2D" uid="uid://badyh6ydnrnnc" path="res://assets/background/sky.png" id="2_updcl"]
+[ext_resource type="LabelSettings" uid="uid://dktrcdgwc3cay" path="res://ui/styles/sh_redder_72.tres" id="3_plmad"]
+[ext_resource type="FontFile" uid="uid://bhsttrpo4850o" path="res://assets/fonts/Skranji-Bold.ttf" id="4_hbmdo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vbqow"]
-font = ExtResource("1_6ixcq")
+font = ExtResource("4_hbmdo")
 font_size = 32
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -49,12 +49,12 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_1afom"]
-font = ExtResource("1_6ixcq")
+font = ExtResource("4_hbmdo")
 font_size = 24
 font_color = Color(0.909804, 0.321569, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hmv3o"]
-font = ExtResource("1_6ixcq")
+font = ExtResource("4_hbmdo")
 font_size = 24
 font_color = Color(0.909804, 0.321569, 0.172549, 1)
 outline_size = 5
@@ -66,7 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_24apk")
+script = ExtResource("1_5o4de")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -75,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_j42do")
+texture = ExtResource("2_updcl")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -95,7 +95,7 @@ layout_mode = 2
 size_flags_vertical = 0
 text = "TAPPY
 PLANE"
-label_settings = ExtResource("1_7grwy")
+label_settings = ExtResource("3_plmad")
 horizontal_alignment = 1
 
 [node name="PressSpaceLbl" type="Label" parent="MarginContainer"]
