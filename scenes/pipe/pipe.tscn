@@ -8,8 +8,6 @@ size = Vector2(72, 591)
 [node name="Pipe" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Pipe" type="Sprite2D" parent="."]
 texture = ExtResource("1_o3c3w")
 centered = false
 offset = Vector2(-35, 0)
