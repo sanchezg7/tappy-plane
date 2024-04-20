@@ -1,6 +1,7 @@
 extends Node2D
 
 const SCROLL_SPEED: float = 160.0
+@onready var score_sound = $ScoreSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,3 +27,4 @@ func _on_laser_body_exited(body):
 	if body.is_in_group(Game.GROUP_PLAYER) == true:
 		var plane = body
 		Score.increment_current_score()
+		score_sound.play()
