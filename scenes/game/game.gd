@@ -6,6 +6,7 @@ extends Node2D
 @onready var pipes_holder = $PipesHolder
 @onready var spawn_upper = $SpawnUpper
 @onready var spawn_lower = $SpawnLower
+@onready var spawn_timer = $SpawnTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +32,10 @@ func spawn_pipes() -> void:
 func _on_spawn_timer_timeout():
 	spawn_pipes()
 
+func stop_pipes() -> void:
+	spawn_timer.stop()
+	for pipe in pipes_holder.get_children():
+		pipe.set_process(false)
 
 func _on_plane_died():
-	print("died")
+	stop_pipes()
