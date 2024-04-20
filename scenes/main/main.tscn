@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://2spt1fr0dnrd"]
+[gd_scene load_steps=12 format=3 uid="uid://2spt1fr0dnrd"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_5o4de"]
 [ext_resource type="Texture2D" uid="uid://badyh6ydnrnnc" path="res://assets/background/sky.png" id="2_updcl"]
 [ext_resource type="LabelSettings" uid="uid://dktrcdgwc3cay" path="res://ui/styles/sh_redder_72.tres" id="3_plmad"]
 [ext_resource type="FontFile" uid="uid://bhsttrpo4850o" path="res://assets/fonts/Skranji-Bold.ttf" id="4_hbmdo"]
+[ext_resource type="FontFile" uid="uid://cgmns47sjwn70" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="5_bwj8d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vbqow"]
 font = ExtResource("4_hbmdo")
@@ -49,12 +50,12 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_1afom"]
-font = ExtResource("4_hbmdo")
+font = ExtResource("5_bwj8d")
 font_size = 24
 font_color = Color(0.909804, 0.321569, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hmv3o"]
-font = ExtResource("4_hbmdo")
+font = ExtResource("5_bwj8d")
 font_size = 24
 font_color = Color(0.909804, 0.321569, 0.172549, 1)
 outline_size = 5
