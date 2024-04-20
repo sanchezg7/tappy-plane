@@ -23,9 +23,6 @@ position = Vector2(2, -26)
 [node name="Floor" parent="." instance=ExtResource("3_ydysf")]
 position = Vector2(-16, 862)
 
-[node name="Pipes" parent="." instance=ExtResource("4_12n7p")]
-position = Vector2(384, 544)
-
 [node name="PipesHolder" type="Node" parent="."]
 
 [node name="SpawnTimer" type="Timer" parent="."]
