@@ -7,9 +7,8 @@ func _ready():
 	high_score_value_lbl.text = str(Score.get_high_score())
 	
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("fly") == true:
+	if Input.is_action_just_pressed(Planee.ACT_FLY) == true:
 		Game.load_game_scene()
 

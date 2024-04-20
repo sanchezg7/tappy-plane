@@ -3,16 +3,21 @@ extends Control
 @onready var space_lbl = $MarginContainer/SpaceLbl
 @onready var timer = $Timer
 
+@onready var isGameOver: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	Planee.on_plane_died.connect(_on_plane_died)
+	Planee.on_plane_died.connect(_handleGameOver)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if isGameOver && Input.is_action_just_pressed(Planee.ACT_FLY):
+		Game.load_game_scene()
 	pass
 
-func _on_plane_died():
+func _handleGameOver():
+	isGameOver = true
 	show()
 	timer.start()
 

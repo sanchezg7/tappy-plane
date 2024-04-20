@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-#signal on_plane_died
-
 const GRAVITY: float = 888.0
 const POWER: float = -400.0
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -29,6 +27,6 @@ func handleDie() -> void:
 	Planee.on_plane_died.emit()
 
 func fly() -> void:
-	if Input.is_action_just_pressed("fly") == true:
+	if Input.is_action_just_pressed(Planee.ACT_FLY) == true:
 		velocity.y = POWER
 		animation_player.play(ANIM_POWER)
