@@ -16,10 +16,6 @@ func _ready():
 	spawn_pipes()
 	Planee.on_plane_died.connect(_on_plane_died)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func spawn_pipes() -> void:
 	# it's been created at this point. Default position of 0,0. Move it to be off screen
 	var new_pipes = pipes_scene.instantiate()

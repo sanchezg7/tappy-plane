@@ -24,6 +24,5 @@ func _on_pipe_body_entered(body):
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(Game.GROUP_PLAYER) == true:
-		var plane = body
 		Score.increment_current_score()
 		score_sound.play()

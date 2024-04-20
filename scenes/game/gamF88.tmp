@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3ox4lthvxj74"]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_abg6j"]
+[ext_resource type="PackedScene" uid="uid://tfcvxu1gtw0p" path="res://scenes/plane/plane.tscn" id="2_68sne"]
+[ext_resource type="PackedScene" uid="uid://sdfg4v1gkt1y" path="res://scenes/barrier/barrier.tscn" id="3_ydysf"]
+[ext_resource type="PackedScene" uid="uid://b0xsqgqq7wup5" path="res://scenes/pipes/pipes.tscn" id="4_12n7p"]
+[ext_resource type="PackedScene" uid="uid://2sskqpwh4xv5" path="res://ui/hud/hud.tscn" id="6_p83l8"]
+[ext_resource type="PackedScene" uid="uid://cla44581h40u8" path="res://scenes/game_over/game_over.tscn" id="7_tfjnx"]
+[ext_resource type="PackedScene" uid="uid://bod3bxkl43qmf" path="res://scenes/ParallaxBackground/parallax_background.tscn" id="8_u8krp"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_abg6j")
+pipes_scene = ExtResource("4_12n7p")
+
+[node name="Plane" parent="." instance=ExtResource("2_68sne")]
+position = Vector2(63, 572)
+
+[node name="Cieling" parent="." instance=ExtResource("3_ydysf")]
+position = Vector2(2, -26)
+
+[node name="Floor" parent="." instance=ExtResource("3_ydysf")]
+position = Vector2(-16, 862)
+
+[node name="PipesHolder" type="Node" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="SpawnUpper" type="Marker2D" parent="."]
+position = Vector2(530, 340)
+
+[node name="SpawnLower" type="Marker2D" parent="."]
+position = Vector2(530, 540)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("6_p83l8")]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("7_tfjnx")]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("8_u8krp")]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

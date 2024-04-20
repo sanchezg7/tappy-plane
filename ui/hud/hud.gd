@@ -9,7 +9,3 @@ func _ready():
 
 func onScoreUpdated(score: int) -> void:
 	score_lbl.text = str(score)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
