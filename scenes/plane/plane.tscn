@@ -67,7 +67,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_hi7lr"]
-resource_name = "test"
+resource_name = "beizerCurveTest"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,8 +83,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tutek"]
 _data = {
 "RESET": SubResource("Animation_ng337"),
-"onPower": SubResource("Animation_eakcm"),
-"test": SubResource("Animation_hi7lr")
+"beizerCurveTest": SubResource("Animation_hi7lr"),
+"onPower": SubResource("Animation_eakcm")
 }
 
 [node name="Plane" type="CharacterBody2D"]
@@ -95,7 +95,7 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_2460c")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.130214
+frame_progress = 0.669846
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1frch")
