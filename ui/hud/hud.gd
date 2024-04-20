@@ -4,9 +4,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Score.on_score_updated.connect(onScoreUpdated)
 	pass # Replace with function body.
 
+func onScoreUpdated(score: int) -> void:
+	score_lbl.text = str(score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	score_lbl.text = str(Score.get_current_score())
+	pass
