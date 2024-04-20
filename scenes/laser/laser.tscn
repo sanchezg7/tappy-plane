@@ -23,6 +23,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_lm5x5"]
 resource_name = "handleFlash"
 length = 0.9
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,3 +57,4 @@ shape = SubResource("RectangleShape2D_qp67g")
 libraries = {
 "": SubResource("AnimationLibrary_abfri")
 }
+autoplay = "handleFlash"
