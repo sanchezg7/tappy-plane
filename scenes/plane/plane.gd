@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 
-const GRAVITY: float = 700.0
+const GRAVITY: float = 888.0
 const POWER: float = -400.0
-
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+const ANIM_POWER = "onPower"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,3 +29,4 @@ func handleDie() -> void:
 func fly() -> void:
 	if Input.is_action_just_pressed("fly") == true:
 		velocity.y = POWER
+		animation_player.play(ANIM_POWER)
