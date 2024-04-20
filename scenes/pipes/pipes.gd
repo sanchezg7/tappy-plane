@@ -12,3 +12,6 @@ func _ready():
 func _physics_process(delta):
 	position.x -= SCROLL_SPEED * delta
 	pass
+
+func _on_screen_exited():
+	queue_free()
