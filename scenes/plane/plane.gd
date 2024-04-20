@@ -23,10 +23,10 @@ func _physics_process(delta):
 		handleDie()
 
 func handleDie() -> void:
-	on_plane_died.emit()
 	sprite.stop()
 	# hint to stop the physics calc
 	set_physics_process(false) 
+	on_plane_died.emit()
 
 func fly() -> void:
 	if Input.is_action_just_pressed("fly") == true:

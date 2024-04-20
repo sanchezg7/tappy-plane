@@ -18,10 +18,11 @@ func _on_screen_exited():
 
 func _on_pipe_body_entered(body):
 	if body.is_in_group(Game.GROUP_PLAYER) == true:
-		get_tree().call_group(Game.GROUP_PLAYER, "handleDie")
-		print("On pipe body entered ", body)
+		var plane = body;
+		plane.handleDie()
 		
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(Game.GROUP_PLAYER) == true:
-		print("On laser body exited ", body)
+		var plane = body;
+		plane.handleDie()
