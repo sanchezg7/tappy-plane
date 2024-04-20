@@ -19,4 +19,3 @@ func set_current_score(v: int) -> void:
 
 func increment_current_score() -> void:
 	set_current_score(_current_score + 1)
-	print("Score: ", get_current_score())
