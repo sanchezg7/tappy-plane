@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://2spt1fr0dnrd"]
+[gd_scene load_steps=10 format=3 uid="uid://2spt1fr0dnrd"]
 
 [ext_resource type="FontFile" uid="uid://bhsttrpo4850o" path="res://assets/fonts/Skranji-Bold.ttf" id="1_6ixcq"]
 [ext_resource type="LabelSettings" uid="uid://dktrcdgwc3cay" path="res://ui/styles/sh_redder_72.tres" id="1_7grwy"]
@@ -10,6 +10,43 @@ font = ExtResource("1_6ixcq")
 font_size = 32
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_olbvm"]
+resource_name = "handlePulse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [32, 48, 32]
+}
+
+[sub_resource type="Animation" id="Animation_3cifw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqil5"]
+_data = {
+"RESET": SubResource("Animation_3cifw"),
+"handlePulse": SubResource("Animation_olbvm")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_1afom"]
 font = ExtResource("1_6ixcq")
@@ -25,10 +62,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_j42do")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -56,6 +97,12 @@ text = "Press Space
 To Play"
 label_settings = SubResource("LabelSettings_vbqow")
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/PressSpaceLbl"]
+libraries = {
+"": SubResource("AnimationLibrary_hqil5")
+}
+autoplay = "handlePulse"
 
 [node name="HighScoreLbl" type="Label" parent="MarginContainer"]
 layout_mode = 2
