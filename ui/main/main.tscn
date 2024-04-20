@@ -11,22 +11,6 @@ font_size = 32
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_olbvm"]
-resource_name = "handlePulse"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:label_settings:font_size")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [32, 48, 32]
-}
-
 [sub_resource type="Animation" id="Animation_3cifw"]
 length = 0.001
 tracks/0/type = "value"
@@ -42,10 +26,26 @@ tracks/0/keys = {
 "values": [32]
 }
 
+[sub_resource type="Animation" id="Animation_5i1vh"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqil5"]
 _data = {
 "RESET": SubResource("Animation_3cifw"),
-"handlePulse": SubResource("Animation_olbvm")
+"flash": SubResource("Animation_5i1vh")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_1afom"]
@@ -102,7 +102,7 @@ horizontal_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_hqil5")
 }
-autoplay = "handlePulse"
+autoplay = "flash"
 
 [node name="HighScoreLbl" type="Label" parent="MarginContainer"]
 layout_mode = 2
