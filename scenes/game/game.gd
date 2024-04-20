@@ -14,6 +14,7 @@ func _ready():
 	randomize()
 	Score.set_current_score(0)
 	spawn_pipes()
+	Planee.on_plane_died.connect(_on_plane_died)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
