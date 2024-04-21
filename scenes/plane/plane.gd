@@ -30,6 +30,6 @@ func handleDie() -> void:
 	engine_sound.stop()
 
 func fly() -> void:
-	if Input.is_action_just_pressed(Planee.ACT_FLY) == true:
+	if Planee.isActionFly():
 		velocity.y = POWER
 		animation_player.play(ANIM_POWER)

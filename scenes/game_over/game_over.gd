@@ -13,9 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if isGameOver && Input.is_action_just_pressed(Planee.ACT_FLY):
+	if isGameOver && Planee.isActionFly():
 		Game.load_game_scene()
-	pass
 
 func _handleGameOver():
 	game_over_sound.play()
