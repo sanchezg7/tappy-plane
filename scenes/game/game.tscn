@@ -43,7 +43,6 @@ position = Vector2(530, 540)
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_u8krp")]
 
 [node name="TouchScreenFlyActionButton" parent="." instance=ExtResource("8_vlwkl")]
-position = Vector2(160, 691)
-scale = Vector2(9.0625, 3.79167)
+position = Vector2(238, 430)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
