@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://brppqepjmjfr8"]
+
+[ext_resource type="Script" path="res://TouchScreenButton.gd" id="1_gyjgr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmvj7"]
+size = Vector2(854, 480)
+
+[node name="TouchScreenFlyActionButton" type="TouchScreenButton"]
+shape = SubResource("RectangleShape2D_qmvj7")
+action = "fly"
+visibility_mode = 1
+script = ExtResource("1_gyjgr")
