@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3ox4lthvxj74"]
+[gd_scene load_steps=10 format=3 uid="uid://c3ox4lthvxj74"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_abg6j"]
 [ext_resource type="PackedScene" uid="uid://tfcvxu1gtw0p" path="res://scenes/plane/plane.tscn" id="2_68sne"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cla44581h40u8" path="res://scenes/game_over/game_over.tscn" id="7_tfjnx"]
 [ext_resource type="PackedScene" uid="uid://bod3bxkl43qmf" path="res://scenes/ParallaxBackground/parallax_background.tscn" id="8_u8krp"]
 [ext_resource type="PackedScene" uid="uid://brppqepjmjfr8" path="res://scenes/TouchScreenFlyActionButton/touch_screen_fly_action_button.tscn" id="8_vlwkl"]
+[ext_resource type="AudioStream" uid="uid://l5njob2ed23p" path="res://assets/audio/sinmiedo.mp3" id="9_8tvik"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_abg6j")
@@ -44,5 +45,9 @@ position = Vector2(530, 540)
 
 [node name="TouchScreenFlyActionButton" parent="." instance=ExtResource("8_vlwkl")]
 position = Vector2(238, 430)
+
+[node name="GameStartAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8tvik")
+volume_db = 8.32
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

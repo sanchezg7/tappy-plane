@@ -7,6 +7,7 @@ extends Node2D
 @onready var spawn_upper = $SpawnUpper
 @onready var spawn_lower = $SpawnLower
 @onready var spawn_timer = $SpawnTimer
+@onready var game_start_audio = $GameStartAudio
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,8 @@ func _ready():
 	Score.set_current_score(0)
 	spawn_pipes()
 	Planee.on_plane_died.connect(_on_plane_died)
+	game_start_audio.play()
+
 
 func spawn_pipes() -> void:
 	# it's been created at this point. Default position of 0,0. Move it to be off screen
